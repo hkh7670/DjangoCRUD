@@ -1,0 +1,21 @@
+{{list}}
+{{numbers}}
+{% if list %}
+    <ul>
+        {% for question in list %}
+            <li><a href="/polls/{{question.id}}/">{{ question.question_text }} ({{question.pub_date}})</a></li>
+        {% endfor %}
+    </ul>
+{% else %}
+    <p>No polls are available.</p>
+{% endif %}
+
+{% if numbers %}
+<ul>
+    {% for number in numbers %}
+    <li><a href="/polls/{{question.id}}/">{{ number }}</a></li>
+    {% endfor %}
+</ul>
+{% else %}
+<p>No polls are available.</p>
+{% endif %}

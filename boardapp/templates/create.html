@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta CHARSET="UTF-8">
+    <title>Board App</title>
+</head>
+<style>
+    #board {
+        width: 80%;
+        margin: auto;
+    }
+    table {
+        width:100%;
+        margin: auto;
+        border-top: 1px solid #444444;
+        border-collapse: collapse;
+    }
+    th, td {
+        border-bottom: 1px solid #444444;
+        padding: 10px;
+        text-align: center;
+    }
+    thead {
+        background-color: #bbdefb;
+    }
+</style>
+<body>
+    <form method="POST" class="post-form">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="save btn btn-default">Save</button>
+    </form>
+</body>
+</html>

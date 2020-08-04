@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        table {
+            width: 100%;
+            margin: auto;
+            border-top: 1px solid #444444;
+            border-collapse: collapse;
+        }
+
+        th, td {
+            border-bottom: 1px solid #444444;
+            padding: 10px;
+            text-align: center;
+        }
+
+        thead {
+            background-color: #bbdefb;
+        }
+    </style>
+</head>
+
+<body>
+<table>
+    <thead>
+    <!--    <th>ID</th>-->
+    <th>Title</th>
+    <th>Contents</th>
+    <th>Pub Date</th>
+    </thead>
+    <tr>
+        <th>{{post.title}}</th>
+        <th>{{post.body}}</th>
+        <th>{{post.pub_date}}</th>
+    </tr>
+</table>
+<button onclick="location.href='create'">수정</button>
+<button>
+    <a href="{% url 'postDelete' post.id %}">삭제</a>
+</button>
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta CHARSET="UTF-8">
+    <title>Board App</title>
+</head>
+<style>
+    #board {
+        width: 80%;
+        margin: auto;
+    }
+    table {
+        width:100%;
+        margin: auto;
+        border-top: 1px solid #444444;
+        border-collapse: collapse;
+    }
+    th, td {
+        border-bottom: 1px solid #444444;
+        padding: 10px;
+        text-align: center;
+    }
+    thead {
+        background-color: #bbdefb;
+    }
+</style>
+<body>
+    <div id="board">
+        {% if posts %}
+        <table>
+            <thead>
+                <th>ID</th>
+                <th>Title</th>
+<!--                <th>Contents</th>-->
+                <th>Pub Date</th>
+            </thead>
+            {% for post in posts %}
+            <tr>
+                <th>{{forloop.counter}}</th>
+                <th><a href="{% url 'postView' post.id %}">{{post.title}}</a></th>
+<!--                <th>{{post.body}}</th>-->
+                <th>{{post.pub_date}}</th>
+            {% endfor %}
+            </tr>
+        </table>
+        {% endif %}
+        </p>
+        <button onclick="location.href='create'">글 작성</button>
+    </div>
+</body>
+</html>
