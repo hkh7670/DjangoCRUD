@@ -1,4 +1,0 @@
-{
-    "python.pythonPath": "/Users/kyu/.pyenv/versions/py36_django/bin/python",
-    "python.formatting.provider": "black"
-}
