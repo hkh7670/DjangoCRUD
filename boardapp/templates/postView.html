@@ -37,7 +37,11 @@
         <th>{{post.pub_date}}</th>
     </tr>
 </table>
-<button onclick="location.href='create'">수정</button>
+
+</p>
+<button>
+    <a href="{% url 'postUpdate' post.id %}">수정</a>
+</button>
 <button>
     <a href="{% url 'postDelete' post.id %}">삭제</a>
 </button>

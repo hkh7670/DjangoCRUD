@@ -5,29 +5,32 @@
     <title>Board App</title>
 </head>
 <style>
-    #board {
-        width: 80%;
-        margin: auto;
-    }
+
     table {
-        width:100%;
-        margin: auto;
+        width: 100%;
         border-top: 1px solid #444444;
         border-collapse: collapse;
     }
+
     th, td {
         border-bottom: 1px solid #444444;
         padding: 10px;
-        text-align: center;
     }
-    thead {
-        background-color: #bbdefb;
+    textarea, input{
+        width: 100%;
     }
 </style>
 <body>
     <form method="POST" class="post-form">
-        {% csrf_token %}
-        {{ form.as_p }}
+        <table>
+            <caption><h2>글 작성</h2></caption>
+            <colgroup>
+                <col width="10%" />
+                <col width="90%" />
+            </colgroup>
+            {% csrf_token %}
+            {{ form.as_table }}
+        </table>
         <button type="submit" class="save btn btn-default">Save</button>
     </form>
 </body>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta CHARSET="UTF-8">
+    <title>Board App</title>
+</head>
+<style>
+    table {
+        width: 100%;
+        border-top: 1px solid #444444;
+        border-collapse: collapse;
+    }
+
+    th, td {
+        border-bottom: 1px solid #444444;
+        padding: 10px;
+    }
+    textarea, input{
+        width: 100%;
+    }
+
+</style>
+<body>
+<form method="POST" class="post-form">
+    <table>
+        <caption><h2>글 수정</h2></caption>
+        <colgroup>
+            <col width="10%"/>
+            <col width="90%"/>
+        </colgroup>
+        {% csrf_token %}
+        {{ form.as_table }}
+    </table>
+
+    <button type="submit" class="save btn btn-default">Save</button>
+</form>
+</body>
+</html>
