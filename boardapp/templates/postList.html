@@ -52,7 +52,8 @@
             </thead>
             {% for post in posts %}
             <tr>
-                <th>{{forloop.counter}}</th>
+                <!-- <th>{{forloop.counter}}</th> -->
+                <th>{{post.id}}</th>
                 <th><a href="{% url 'postView' post.id %}">{{post.title}}</a></th>
 <!--                <th>{{post.body}}</th>-->
                 <th>{{post.pub_date}}</th>

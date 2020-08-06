@@ -7,7 +7,7 @@ from django.shortcuts import redirect, get_object_or_404
 
 # Create your views here.
 def postList(request):
-    posts = Post.objects.all()
+    posts = Post.objects.all().order_by("-pub_date")
     context = {"posts": posts}
     return render(request, "postList.html", context)
 
@@ -21,7 +21,7 @@ def postCreate(request):
             # post.body = request.body
             # post.pub_date = timezone.now()
             post.save()
-            return redirect('postList')
+            return redirect("postList")
     else:
         form = PostForm()
     return render(request, "postCreate.html", {"form": form})
@@ -50,7 +50,7 @@ def postUpdate(request, id):
             # post.body = request.body
             # post.pub_date = timezone.now()
             post.save()
-            return redirect('postList')
+            return redirect("postList")
     else:
         form = PostForm(instance=post)
     return render(request, "postUpdate.html", {"form": form})
