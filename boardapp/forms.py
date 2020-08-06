@@ -10,3 +10,7 @@ class PostForm(forms.ModelForm):
             'title': '제목',
             'body': '내용',
         }
+
+class SearchForm(forms.ModelForm):
+    class Meta:
+        title = forms.CharField(label='title')

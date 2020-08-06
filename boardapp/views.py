@@ -7,7 +7,10 @@ from django.shortcuts import redirect, get_object_or_404
 
 # Create your views here.
 def postList(request):
-    posts = Post.objects.all().order_by("-pub_date")
+    title = request.GET.get('title', '')
+    body = request.GET.get('body', '')
+    posts = Post.objects.filter(title__icontains=title, body__icontains=body).order_by("-pub_date")
+    # posts = Post.objects.all().order_by("-pub_date")
     context = {"posts": posts}
     return render(request, "postList.html", context)
 
